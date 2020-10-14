@@ -1,0 +1,35 @@
+{
+  "name": "@4a/packing",
+  "version": "0.1.0",
+  "description": "package by bytenode",
+  "main": "index.js",
+  "bin": {
+    "packing": "bin/packing.js"
+  },
+  "scripts": {
+    "build": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gavinning/pkg-by-bytenode.git"
+  },
+  "keywords": [
+    "pkg",
+    "pack",
+    "packing",
+    "packing-by-bytenode"
+  ],
+  "author": "gavinning",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gavinning/packing-by-bytenode/issues"
+  },
+  "homepage": "https://github.com/gavinning/packing-by-bytenode#readme",
+  "dependencies": {
+    "bytenode": "^1.1.7",
+    "commander": "^6.1.0",
+    "fs-extra": "^9.0.1",
+    "glob": "^7.1.6",
+    "rimraf": "^3.0.2"
+  }
+}
