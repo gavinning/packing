@@ -1,4 +1,4 @@
 const builder = require('./index')
 
-builder()
+builder({ dist: 'dist' })
 // builder({ src: 'src', dist: 'dist', ignore: [] })

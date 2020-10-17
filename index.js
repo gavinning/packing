@@ -9,23 +9,37 @@ const assert = require('assert')
 
 class Builder {
     constructor({ src, dist, ignore = [] }) {
-        this.src = src || 'src'
-        this.dist = dist || 'dist'
-        this.source = path.join(cwd, this.src)
-        this.target = path.join(cwd, this.dist)
+
+        if (src) {
+            this.src = src
+            this.source = path.join(cwd, this.src)
+        }
+
+        if (dist) {
+            this.dist = dist
+            this.target = path.join(cwd, this.dist)
+        }
+        else {
+            throw new Error('dist not found')
+        }
 
         this.searchOptions = {
             cwd: this.target,
             realpath: true,
-            ignore: ['node_modules/**', ...ignore],
+            ignore: ['.git/**', 'node_modules/**', ...ignore],
         }
     }
 
     start() {
         this.log()
         this.log('build start')
-        this.clone()
-        this.compile()
+
+        if (this.source) {
+            this.clone()
+        }
+        if (this.target) {
+            this.compile()
+        }
     }
 
     clone() {

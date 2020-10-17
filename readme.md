@@ -23,8 +23,8 @@ packing nodejs by bytenode
 
 Options:
   -v, --version              output the version number
-  -s, --src <src>            source folder (default: "src")
-  -d, --dist <dist>          target folder (default: "dist")
+  -s, --src <src>            source folder
+  -d, --dist <dist>          target folder
   -i, --ignore <ignores...>  ignore files
   -h, --help                 display help for command
 ```

@@ -9,8 +9,10 @@ const app = require('../index')
 program
     .version(require(package).version, '-v, --version')
     .description('packing nodejs by bytenode')
-    .option('-s, --src <src>', 'source folder', 'src')
-    .option('-d, --dist <dist>', 'target folder', 'dist')
+    .option('-s, --src <src>', 'source folder')
+    .option('-d, --dist <dist>', 'target folder')
     .option('-i, --ignore <ignores...>', 'ignore files')
-    .action((...args) => app(...args))
+    .action((...args) => {
+        process.argv.length === 2 ? program.help() : app(...args)
+    })
     .parse(process.argv)
